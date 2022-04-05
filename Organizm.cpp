@@ -1,17 +1,16 @@
-//
-// Created by roagen on 04.04.2022.
-//
 
 #include "Organizm.h"
 
-Punkt Organizm::getPolozenie() const {
+Wektor2d Organizm::getPolozenie() const {
     return polozenie;
 }
 
-Organizm::Organizm(Punkt polozenie, uint sila, uint inicjatywa):
+Organizm::Organizm(Wektor2d polozenie, uint sila, uint inicjatywa):
     polozenie(polozenie),
     sila(sila),
     inicjatywa(inicjatywa){
+
+
 
 }
 
@@ -24,3 +23,14 @@ void Organizm::setSwiat(Swiat* swiat) {
 Swiat *Organizm::getSwiat() {
     return swiat;
 }
+
+uint Organizm::getInicjatywa() const {
+    return inicjatywa;
+}
+
+std::ostream &operator<<(std::ostream &os, const Organizm& organizm) {
+
+        organizm.info(os);
+
+}
+

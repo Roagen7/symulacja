@@ -2,8 +2,10 @@
 
 #include <string>
 
-#include "Punkt.h"
-#include "deklaracje.h"
+#include "Wektor2d.h"
+
+
+class Swiat;
 
 class Organizm {
 
@@ -13,22 +15,33 @@ public:
     virtual void kolizja() = 0;
     [[nodiscard]] virtual std::string rysowanie() const = 0;
 
-    [[nodiscard]] Punkt getPolozenie() const;
+    [[nodiscard]] Wektor2d getPolozenie() const;
+    [[nodiscard]] uint getInicjatywa() const;
+
+
     void setSwiat(Swiat* swiat);
     Swiat* getSwiat();
+
+
+
 
     virtual ~Organizm() = default;
 
 protected:
 
-    Organizm(Punkt polozenie, uint sila, uint inicjatywa);
+    Organizm(Wektor2d polozenie, uint sila, uint inicjatywa);
     uint sila;
     uint inicjatywa;
-    Punkt polozenie;
+    Wektor2d polozenie;
 
-private:
 
+    virtual void info(std::ostream& os) const = 0;
+    friend std::ostream& operator<<(std::ostream& os, const Organizm& organizm);
     Swiat* swiat;
+
+
+
+
 
 
 };

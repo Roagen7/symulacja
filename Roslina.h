@@ -10,12 +10,14 @@ class Roslina : public Organizm {
 
 public:
 
-    Roslina(Punkt pozycja, uint sila);
+    Roslina(Wektor2d pozycja, uint sila);
 
     [[nodiscard]] std::string rysowanie() const override;
     void akcja() override;
 
     void kolizja() override;
+
+    void info(std::ostream &os) const override;
 
 private:
 
