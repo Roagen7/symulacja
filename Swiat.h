@@ -36,6 +36,8 @@ private:
 
     void ruchOrganizmow();
     void rysujNaglowek() const;
+    void rysujGranice() const;
+
     void rysujSwiat();
 
     Organizm* getOrganizmNaPozycji(Wektor2d p);

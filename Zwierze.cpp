@@ -46,7 +46,7 @@ wczesniejszePolozenie(polozenie) {
 
 void Zwierze::info(std::ostream &os) const {
 
-    os << "Zwierze";
+    os << "Zwierze w wieku " << wiek;
 
 }
 

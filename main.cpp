@@ -1,9 +1,14 @@
+
+#include <iostream>
 #include "symulacja.h"
 
 
 int main() {
 
+    std::string input;
     Swiat swiat(10,20);
+
+
 
     auto* zwie = new Zwierze(Wektor2d{0, 0}, 1, 2);
 
@@ -18,6 +23,10 @@ int main() {
     swiat.wykonajTure();
     swiat.zabijOrganizm(zwie);
     swiat.wykonajTure();
+
+    std::cin >> input;
+
+
 
 
     return 0;

@@ -28,7 +28,7 @@ Roslina::Roslina(Wektor2d pozycja, uint sila):
 
 void Roslina::info(std::ostream &os) const {
 
-    os << "Roslina";
+    os << "Roslina w wieku " << wiek;
 
 
 }

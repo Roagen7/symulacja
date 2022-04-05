@@ -3,6 +3,7 @@
 
 void Swiat::wykonajTure() {
 
+    system("clear");
     nrTury++;
 
     rysujNaglowek();
@@ -19,8 +20,11 @@ void Swiat::wykonajTure() {
 
 void Swiat::rysujSwiat() {
 
+    rysujGranice();
+
     for(uint y = 0; y < wysokosc; y++){
 
+        std::cout << "\e[35m|\e[0m";
         for(uint x = 0; x < szerokosc; x++){
 
             auto* lokator = getOrganizmNaPozycji({(int) y,(int) x});
@@ -37,9 +41,13 @@ void Swiat::rysujSwiat() {
 
         }
 
+        std::cout << "\e[35m|\e[0m";
+
         std::cout << std::endl;
 
     }
+
+    rysujGranice();
 
 }
 
@@ -88,6 +96,13 @@ void Swiat::ruchOrganizmow() {
 
     std::sort(organizmy.begin(),organizmy.end(),[](Organizm* org1, Organizm* org2){
 
+        if(org1->getInicjatywa() == org2->getInicjatywa()){
+
+            return org1->getWiek() > org2->getWiek();
+
+        }
+
+
         return org1->getInicjatywa() > org2->getInicjatywa();
 
     });
@@ -95,6 +110,8 @@ void Swiat::ruchOrganizmow() {
     for(auto* organizm: organizmy){
 
         organizm->akcja();
+
+        organizm->starzejSie();
 
     }
 
@@ -155,5 +172,19 @@ void Swiat::obecnyStan() {
 
     rysujSwiat();
 
+
+}
+
+void Swiat::rysujGranice() const {
+
+    std::cout << "\e[35m+";
+
+    for(int i = 0; i < szerokosc; i++){
+
+        std::cout << "-";
+
+    }
+
+    std::cout << "+\e[0m" << std::endl;
 
 }

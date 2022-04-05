@@ -34,3 +34,13 @@ std::ostream &operator<<(std::ostream &os, const Organizm& organizm) {
 
 }
 
+void Organizm::starzejSie() {
+
+    wiek++;
+
+}
+
+uint Organizm::getWiek() const {
+    return wiek;
+}
+

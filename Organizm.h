@@ -18,6 +18,8 @@ public:
     [[nodiscard]] Wektor2d getPolozenie() const;
     [[nodiscard]] uint getInicjatywa() const;
 
+    void starzejSie();
+
 
     void setSwiat(Swiat* swiat);
     Swiat* getSwiat();
@@ -27,21 +29,21 @@ public:
 
     virtual ~Organizm() = default;
 
+    uint getWiek() const;
+
 protected:
 
     Organizm(Wektor2d polozenie, uint sila, uint inicjatywa);
     uint sila;
     uint inicjatywa;
+    uint wiek = 0;
+
     Wektor2d polozenie;
 
 
     virtual void info(std::ostream& os) const = 0;
     friend std::ostream& operator<<(std::ostream& os, const Organizm& organizm);
     Swiat* swiat;
-
-
-
-
 
 
 };
