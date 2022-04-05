@@ -20,9 +20,7 @@ void Zwierze::akcja() {
 
     } while(wczesniejsze == polozenie);
 
-    std::cout << "Zwierze zmienilo polozenie z "
-    << wczesniejsze.y << " " << wczesniejsze.x << " na "
-    << polozenie.y << " " << polozenie.x << std::endl;
+
 
 
 }
@@ -107,16 +105,39 @@ void Zwierze::walcz(Organizm *drugi) {
 
 void Zwierze::rozmnozSie(Zwierze *drugi) {
 
-//    std::cout << *this << " rozmnaza sie z " << *drugi << std::endl;
-//
-//
-//    auto* org = new Zwierze{*this};
-//
-//    this->cofnijSie();
-//    drugi->cofnijSie();
-//
-//    org->setWiek(0);
-//
-//    swiat->addOrganizm(org);
+    if(drugi->getWiek() == 0 ){
+
+        return;
+
+    }
+
+
+    auto* org = new Zwierze{*this};
+
+    this->cofnijSie();
+    Wektor2d miejsceNarodzin = swiat->getWolnePoleObok(drugi->getPolozenie());
+
+    if(miejsceNarodzin == drugi->getPolozenie() || rozmnozylSie || drugi->rozmnozylSie){
+
+
+        delete org;
+        return;
+
+    }
+    org->setPolozenie(miejsceNarodzin);
+
+    swiat->addOrganizm(org);
+    rozmnozylSie = true;
+    drugi->rozmnozylSie = true;
+
+    std::cout << *this << " rozmnaza sie z " << *drugi << std::endl;
 
 }
+
+void Zwierze::nowaTura() {
+
+    rozmnozylSie = false;
+
+}
+
+

@@ -66,3 +66,9 @@ void Organizm::zabij() {
 
 }
 
+void Organizm::setPolozenie(Wektor2d polozenie) {
+
+    this->polozenie = polozenie;
+
+}
+

@@ -14,6 +14,8 @@ public:
     void obecnyStan();
     void wykonajTure();
 
+    void oglosNowaTure();
+
     void addOrganizm(Organizm* organizm);
     void zabijOrganizm(Organizm* organizm);
 
@@ -23,6 +25,7 @@ public:
     uint getNrTury() const;
 
     Organizm* getKolidujacy(Organizm* org);
+    Wektor2d getWolnePoleObok(Wektor2d p);
 
 private:
 

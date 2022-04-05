@@ -13,6 +13,8 @@ public:
 
     virtual void akcja() = 0;
     virtual void kolizja() = 0;
+    virtual void nowaTura() = 0;
+
     [[nodiscard]] virtual std::string rysowanie() const = 0;
 
     [[nodiscard]] Wektor2d getPolozenie() const;
@@ -22,6 +24,7 @@ public:
 
 
     void setSwiat(Swiat* swiat);
+    void setPolozenie(Wektor2d polozenie);
     Swiat* getSwiat();
 
     bool isZywy() const;

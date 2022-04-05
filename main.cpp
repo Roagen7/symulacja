@@ -20,6 +20,7 @@ int main() {
     while(1){
 
         swiat.wykonajTure();
+
         getchar();
 
     }

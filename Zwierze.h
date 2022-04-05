@@ -17,9 +17,11 @@ public:
     void info(std::ostream &os) const override;
 
     [[nodiscard]] std::string rysowanie() const override;
-
+    void nowaTura() override;
 
 private:
+
+    bool rozmnozylSie = false;
 
     void zmienPolozenie(Wektor2d przemieszczenie);
 
@@ -30,6 +32,7 @@ private:
     void cofnijSie();
 
     Wektor2d wczesniejszePolozenie;
+
 
 };
 

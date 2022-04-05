@@ -19,6 +19,8 @@ public:
 
     void info(std::ostream &os) const override;
 
+    void nowaTura() override {};
+
 private:
 
 

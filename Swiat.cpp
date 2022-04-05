@@ -3,7 +3,13 @@
 
 void Swiat::wykonajTure() {
 
+
+
     system("clear");
+    oglosNowaTure();
+
+
+
     nrTury++;
 
     rysujNaglowek();
@@ -13,6 +19,7 @@ void Swiat::wykonajTure() {
     std::cout << "~~~~~~~~~~~~~~~~~~\e[0m" << std::endl << std::endl;
 
     rysujSwiat();
+
     pozbadzSieZwlok();
 
 }
@@ -103,10 +110,12 @@ void Swiat::ruchOrganizmow() {
 
     });
 
+    int ix = 0;
+    for(int i = 0; i < organizmy.size(); i++){
 
-    for(auto* organizm: organizmy){
+        auto* organizm = organizmy[i];
 
-        if(organizm->getWiek() != 0 && organizm->isZywy()){
+        if(organizm->isZywy() && organizm->getWiek() != 0){
 
             organizm->akcja();
             organizm->kolizja();
@@ -114,10 +123,10 @@ void Swiat::ruchOrganizmow() {
         }
 
         organizm->starzejSie();
-
+        ix++;
     }
 
-    logOrganizmy();
+
 
 }
 
@@ -149,8 +158,6 @@ uint Swiat::getNrTury() const {
 
 void Swiat::zabijOrganizm(Organizm *organizm) {
 
-
-
     for(auto* org : organizmy){
 
         if(org == organizm){
@@ -163,17 +170,15 @@ void Swiat::zabijOrganizm(Organizm *organizm) {
 
         }
 
-
-
     }
 
 }
 
 void Swiat::obecnyStan() {
+
     std::cout << "\e[34m";
     logOrganizmy();
     std::cout << "\e[0m";
-
 
     rysujSwiat();
 
@@ -199,7 +204,8 @@ Organizm *Swiat::getKolidujacy(Organizm* org) {
     for(auto* organizm : organizmy){
 
         if(org->getPolozenie() == organizm->getPolozenie()
-        && org != organizm){
+        && org != organizm
+        && org->isZywy()){
 
             return organizm;
 
@@ -224,6 +230,40 @@ void Swiat::pozbadzSieZwlok() {
 
         }
         ix++;
+
+    }
+
+}
+
+Wektor2d Swiat::getWolnePoleObok(Wektor2d p) {
+
+    for(int dy = -1; dy <= 1; dy++){
+
+        for(int dx = -1; dx <= 1; dx++){
+
+            Wektor2d sprawdzanyPunkt = {p.y + dy, p.x + dx};
+
+            if(sprawdzanyPunkt != p
+            && getOrganizmNaPozycji(sprawdzanyPunkt) == nullptr
+            && !sprawdzanyPunkt.pozaGranicami(wysokosc,szerokosc)){
+
+                return sprawdzanyPunkt;
+
+            }
+
+        }
+
+    }
+
+    return p;
+
+}
+
+void Swiat::oglosNowaTure() {
+
+    for(auto* organizm : organizmy){
+
+        organizm->nowaTura();
 
     }
 
