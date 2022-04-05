@@ -92,10 +92,13 @@ void Zwierze::walcz(Organizm *drugi) {
 
     if(*this > *drugi){
 
+        std::cout << *this << " zjada " << *drugi << std::endl;
+
         swiat->zabijOrganizm(drugi);
 
     } else {
 
+        std::cout << *drugi << " zjada " << *this << std::endl;
         swiat->zabijOrganizm(this);
 
     }

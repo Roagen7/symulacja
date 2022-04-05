@@ -106,7 +106,7 @@ void Swiat::ruchOrganizmow() {
 
     for(auto* organizm: organizmy){
 
-        if(organizm->getWiek() != 0){
+        if(organizm->getWiek() != 0 && organizm->isZywy()){
 
             organizm->akcja();
             organizm->kolizja();
@@ -226,6 +226,5 @@ void Swiat::pozbadzSieZwlok() {
         ix++;
 
     }
-
 
 }
