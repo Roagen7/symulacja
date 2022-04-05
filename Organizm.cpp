@@ -44,3 +44,25 @@ uint Organizm::getWiek() const {
     return wiek;
 }
 
+bool operator<(const Organizm &o1, const Organizm &o2) {
+    return o1.sila < o2.sila;
+}
+
+bool operator>(const Organizm &o1, const Organizm &o2) {
+    return o1.sila > o2.sila;
+}
+
+void Organizm::setWiek(uint wiek) {
+    this->wiek = wiek;
+}
+
+bool Organizm::isZywy() const {
+    return zywy;
+}
+
+void Organizm::zabij() {
+
+    zywy = false;
+
+}
+

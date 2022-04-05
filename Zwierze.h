@@ -22,6 +22,11 @@ public:
 private:
 
     void zmienPolozenie(Wektor2d przemieszczenie);
+
+    void walcz(Organizm* drugi);
+
+    void rozmnozSie(Zwierze* drugi);
+
     void cofnijSie();
 
     Wektor2d wczesniejszePolozenie;

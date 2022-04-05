@@ -8,13 +8,12 @@ void Swiat::wykonajTure() {
 
     rysujNaglowek();
 
-
     ruchOrganizmow();
 
     std::cout << "~~~~~~~~~~~~~~~~~~\e[0m" << std::endl << std::endl;
 
-
     rysujSwiat();
+    pozbadzSieZwlok();
 
 }
 
@@ -29,7 +28,7 @@ void Swiat::rysujSwiat() {
 
             auto* lokator = getOrganizmNaPozycji({(int) y,(int) x});
 
-            if(lokator == nullptr){
+            if(lokator == nullptr || !lokator->isZywy()){
 
                 std::cout << " ";
 
@@ -88,8 +87,6 @@ void Swiat::rysujNaglowek() const {
     std::cout <<"\e[34m Dziennik~~~~~~~~~~" << std::endl;
 
 
-
-
 }
 
 void Swiat::ruchOrganizmow() {
@@ -102,20 +99,23 @@ void Swiat::ruchOrganizmow() {
 
         }
 
-
         return org1->getInicjatywa() > org2->getInicjatywa();
 
     });
 
+
     for(auto* organizm: organizmy){
 
-        organizm->akcja();
+        if(organizm->getWiek() != 0){
+
+            organizm->akcja();
+            organizm->kolizja();
+
+        }
 
         organizm->starzejSie();
 
     }
-
-
 
     logOrganizmy();
 
@@ -125,7 +125,11 @@ void Swiat::logOrganizmy() {
     std::cout << "lista zywych zwierzat: [ " << std::endl;
     for(const auto* organizm : organizmy){
 
-        std::cout << "-" <<*organizm << std::endl;
+        if(organizm->isZywy()){
+
+            std::cout << "-" <<*organizm << std::endl;
+
+        }
 
     }
     std::cout << "]" << std::endl;
@@ -145,20 +149,21 @@ uint Swiat::getNrTury() const {
 
 void Swiat::zabijOrganizm(Organizm *organizm) {
 
-    int ix = 0;
 
-    for(const auto* org : organizmy){
+
+    for(auto* org : organizmy){
 
         if(org == organizm){
 
             std::cout << *organizm << " umiera" << std::endl;
+            org->zabij();
 
-            organizmy.erase(organizmy.begin() + ix);
+
             return;
 
         }
 
-        ix++;
+
 
     }
 
@@ -186,5 +191,41 @@ void Swiat::rysujGranice() const {
     }
 
     std::cout << "+\e[0m" << std::endl;
+
+}
+
+Organizm *Swiat::getKolidujacy(Organizm* org) {
+
+    for(auto* organizm : organizmy){
+
+        if(org->getPolozenie() == organizm->getPolozenie()
+        && org != organizm){
+
+            return organizm;
+
+        }
+
+    }
+
+    return nullptr;
+}
+
+void Swiat::pozbadzSieZwlok() {
+
+    int ix = 0;
+
+    for(auto* organizm: organizmy){
+
+        if(!organizm->isZywy()){
+
+            organizmy.erase(organizmy.begin()+ix);
+            pozbadzSieZwlok();
+            break;
+
+        }
+        ix++;
+
+    }
+
 
 }

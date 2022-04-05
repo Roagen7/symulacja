@@ -22,6 +22,8 @@ public:
     uint getSzerokosc();
     uint getNrTury() const;
 
+    Organizm* getKolidujacy(Organizm* org);
+
 private:
 
     uint wysokosc;
@@ -39,6 +41,8 @@ private:
     void rysujGranice() const;
 
     void rysujSwiat();
+
+    void pozbadzSieZwlok();
 
     Organizm* getOrganizmNaPozycji(Wektor2d p);
 

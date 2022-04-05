@@ -34,6 +34,21 @@ std::string Zwierze::rysowanie() const {
 
 void Zwierze::kolizja() {
 
+    Organizm* drugi = swiat->getKolidujacy(this);
+
+    if(drugi == nullptr) return;
+
+    if(drugi->rysowanie() == this->rysowanie()){
+
+        rozmnozSie((Zwierze*) drugi);
+
+    } else {
+
+        walcz(drugi);
+
+    }
+
+
 }
 
 Zwierze::Zwierze(Wektor2d polozenie, uint sila, uint inicjatywa) :
@@ -46,7 +61,8 @@ wczesniejszePolozenie(polozenie) {
 
 void Zwierze::info(std::ostream &os) const {
 
-    os << "Zwierze w wieku " << wiek;
+    os << "Zwierze" <<
+    " w wieku " << wiek;
 
 }
 
@@ -69,5 +85,35 @@ void Zwierze::zmienPolozenie(Wektor2d przemieszczenie) {
 void Zwierze::cofnijSie() {
 
     polozenie = wczesniejszePolozenie;
+
+}
+
+void Zwierze::walcz(Organizm *drugi) {
+
+    if(*this > *drugi){
+
+        swiat->zabijOrganizm(drugi);
+
+    } else {
+
+        swiat->zabijOrganizm(this);
+
+    }
+
+}
+
+void Zwierze::rozmnozSie(Zwierze *drugi) {
+
+//    std::cout << *this << " rozmnaza sie z " << *drugi << std::endl;
+//
+//
+//    auto* org = new Zwierze{*this};
+//
+//    this->cofnijSie();
+//    drugi->cofnijSie();
+//
+//    org->setWiek(0);
+//
+//    swiat->addOrganizm(org);
 
 }
