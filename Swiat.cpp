@@ -9,7 +9,6 @@ void Swiat::wykonajTure() {
     oglosNowaTure();
 
 
-
     nrTury++;
 
     rysujNaglowek();

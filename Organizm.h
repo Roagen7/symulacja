@@ -47,6 +47,7 @@ protected:
     void setWiek(uint wiek);
 
     virtual void info(std::ostream& os) const = 0;
+    [[nodiscard]] virtual Organizm* kopia() const = 0;
 
     friend std::ostream& operator<<(std::ostream& os, const Organizm& organizm);
     friend bool operator<(const Organizm& o1, const Organizm& o2);

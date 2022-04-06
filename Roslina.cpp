@@ -46,10 +46,14 @@ void Roslina::rozsiej() {
 
     if(pNowy == polozenie) return;
 
-    auto* org = new Roslina{*this};
+    auto* org = this->kopia();
 
     org->setPolozenie(pNowy);
 
     swiat->addOrganizm(org);
 
+}
+
+Roslina * Roslina::kopia() const {
+    return new Roslina{*this};
 }

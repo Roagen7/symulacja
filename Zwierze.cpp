@@ -111,14 +111,12 @@ void Zwierze::rozmnozSie(Zwierze *drugi) {
 
     }
 
-
-    auto* org = new Zwierze{*this};
+    auto* org = this->kopia();
 
     this->cofnijSie();
     Wektor2d miejsceNarodzin = swiat->getWolnePoleObok(drugi->getPolozenie());
 
     if(miejsceNarodzin == drugi->getPolozenie() || rozmnozylSie || drugi->rozmnozylSie){
-
 
         delete org;
         return;

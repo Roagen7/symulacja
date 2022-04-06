@@ -3,8 +3,9 @@
 #include "Organizm.h"
 #include "Swiat.h"
 
+#include "config.h"
+
 #define INICJATYWA_ROSLINY 0
-#define P_ROZSIANIA 0.03
 
 
 class Roslina : public Organizm {
@@ -22,6 +23,8 @@ public:
     void info(std::ostream &os) const override;
 
     void nowaTura() override {};
+
+    [[nodiscard]] virtual Roslina * kopia() const;
 
 private:
     void rozsiej();
