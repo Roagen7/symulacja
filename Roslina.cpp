@@ -54,6 +54,6 @@ void Roslina::rozsiej() {
 
 }
 
-Roslina * Roslina::kopia() const {
-    return new Roslina{*this};
-}
+//Roslina * Roslina::kopia() const {
+//    return new Roslina{*this};
+//}

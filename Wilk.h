@@ -10,7 +10,7 @@ public:
     Wilk(Wektor2d polozenie);
     [[nodiscard]] std::string rysowanie() const override;
 
-    virtual Wilk* kopia() const;
+    [[nodiscard]] Wilk* kopia() const override;
 
 
 };

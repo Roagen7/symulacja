@@ -25,10 +25,10 @@ void Zwierze::akcja() {
 
 }
 
-std::string Zwierze::rysowanie() const {
-
-    return "\e[31mz\e[0m";
-}
+//std::string Zwierze::rysowanie() const {
+//
+//    return "\e[31mz\e[0m";
+//}
 
 void Zwierze::kolizja() {
 

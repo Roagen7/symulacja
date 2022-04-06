@@ -11,7 +11,7 @@ int main() {
 
     auto* zwie = new Wilk(Wektor2d{0, 0});
 
-    swiat.addOrganizm(new Roslina({5,5},0));
+    swiat.addOrganizm(new Trawa({5,5}));
     swiat.addOrganizm(zwie);
     swiat.addOrganizm(new Wilk(Wektor2d{9, 9}));
 

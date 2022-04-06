@@ -16,7 +16,7 @@ public:
 
     void info(std::ostream &os) const override;
 
-    [[nodiscard]] std::string rysowanie() const override;
+//    [[nodiscard]] std::string rysowanie() const override;
     void nowaTura() override;
 
 private:
