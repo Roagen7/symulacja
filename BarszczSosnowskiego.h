@@ -2,18 +2,18 @@
 
 #include "Roslina.h"
 
-class WilczeJagody : public Roslina{
+class BarszczSosnowskiego : public Roslina{
 
 public:
 
-    explicit WilczeJagody(Wektor2d polozenie);
+    explicit BarszczSosnowskiego(Wektor2d polozenie);
     [[nodiscard]] std::string rysowanie() const override;
 
     void dodajModyfikator(Organizm* organizm) const override;
 
 private:
 
-    [[nodiscard]] WilczeJagody* kopia() const override;
+    [[nodiscard]] BarszczSosnowskiego* kopia() const override;
 
 
 

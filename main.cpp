@@ -10,21 +10,24 @@ int main() {
 
     auto* zwie = new Wilk(Wektor2d{0, 0});
 
-//    swiat.addOrganizm(new Trawa({5,5}));
-//    swiat.addOrganizm(zwie);
-//    swiat.addOrganizm(new Owca(Wektor2d{9, 9}));
-//    swiat.addOrganizm(new Mlecz({1,7}));
-//    swiat.addOrganizm(new Guarana({2,8}));
-//    swiat.addOrganizm(new Guarana({2,9}));
-//    swiat.addOrganizm(new Owca({4,4}));
-//    swiat.addOrganizm(new Owca(Wektor2d{9, 8}));
-    swiat.addOrganizm(new Owca({9,9}));
-    swiat.addOrganizm(new Guarana({9,10}));
-    swiat.addOrganizm(new Guarana({9,8}));
-    swiat.addOrganizm(new Guarana({8,10}));
-    swiat.addOrganizm(new Guarana({7,10}));
+    swiat.addOrganizm(new Trawa({5,5}));
+    swiat.addOrganizm(zwie);
+    swiat.addOrganizm(new Wilk({3,4}));
+    swiat.addOrganizm(new Owca(Wektor2d{9, 9}));
+    swiat.addOrganizm(new Mlecz({1,7}));
+    swiat.addOrganizm(new Guarana({2,8}));
+    swiat.addOrganizm(new Guarana({2,9}));
+    swiat.addOrganizm(new Owca({4,4}));
+    swiat.addOrganizm(new Owca(Wektor2d{9, 8}));
+    swiat.addOrganizm(new WilczeJagody(Wektor2d{10, 10}));
+    swiat.addOrganizm(new WilczeJagody(Wektor2d{10, 9}));
+    swiat.addOrganizm(new BarszczSosnowskiego(Wektor2d{9, 10}));
 
-    swiat.addOrganizm(new Wilk({5,5}));
+    swiat.addOrganizm(new Owca(Wektor2d{19, 19}));
+    swiat.addOrganizm(new Owca(Wektor2d{19, 18}));
+    swiat.addOrganizm(new Owca(Wektor2d{18, 18}));
+    swiat.addOrganizm(new Owca(Wektor2d{17, 18}));
+
 
     while(1){
 

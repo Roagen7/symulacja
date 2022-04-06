@@ -20,12 +20,7 @@ void Mlecz::akcja() {
 
     for(int i = 0; i < MLECZ_PROBY; i++){
 
-        if((float)rand()/(float)RAND_MAX < P_ROZSIANIA){
-
             rozsiej();
-            break;
-
-        }
 
     }
 

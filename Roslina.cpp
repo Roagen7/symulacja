@@ -9,11 +9,11 @@ std::string Roslina::rysowanie() const {
 
 void Roslina::akcja() {
 
-    if((float)rand()/(float) RAND_MAX <= P_ROZSIANIA){
+
 
         rozsiej();
 
-    }
+
 
 
 }
@@ -42,15 +42,18 @@ void Roslina::info(std::ostream &os) const {
 
 void Roslina::rozsiej() {
 
-    auto pNowy = swiat->getWolnePoleObok(polozenie);
+    if((float)rand()/(float) RAND_MAX <= P_ROZSIANIA) {
 
-    if(pNowy == polozenie) return;
+        auto pNowy = swiat->getWolnePoleObok(polozenie);
 
-    auto* org = this->kopia();
+        if (pNowy == polozenie) return;
 
-    org->setPolozenie(pNowy);
+        auto *org = this->kopia();
 
-    swiat->addOrganizm(org);
+        org->setPolozenie(pNowy);
+
+        swiat->addOrganizm(org);
+    }
 
 }
 

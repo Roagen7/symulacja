@@ -9,3 +9,5 @@
 #include "Mlecz.h"
 #include "Owca.h"
 #include "Guarana.h"
+#include "WilczeJagody.h"
+#include "BarszczSosnowskiego.h"

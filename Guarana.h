@@ -11,12 +11,9 @@ public:
 
     void dodajModyfikator(Organizm* organizm) const override;
 
-
 private:
 
     [[nodiscard]] Guarana* kopia() const override;
-
-
 
 
 
