@@ -11,6 +11,8 @@ public:
 
     void dodajModyfikator(Organizm* organizm) const override;
 
+    void akcja() override;
+
 private:
 
     [[nodiscard]] BarszczSosnowskiego* kopia() const override;

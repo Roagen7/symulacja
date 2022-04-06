@@ -161,7 +161,7 @@ void Swiat::zabijOrganizm(Organizm *organizm) {
 
         if(org == organizm){
 
-            std::cout << *organizm << " umiera" << std::endl;
+           
             org->zabij();
 
 

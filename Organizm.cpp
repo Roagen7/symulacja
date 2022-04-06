@@ -1,4 +1,5 @@
 
+#include <iostream>
 #include "Organizm.h"
 
 Wektor2d Organizm::getPolozenie() const {
@@ -61,7 +62,7 @@ bool Organizm::isZywy() const {
 }
 
 void Organizm::zabij() {
-
+    std::cout << *this << "umiera" << std::endl;
     zywy = false;
 
 }

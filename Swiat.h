@@ -26,6 +26,7 @@ public:
 
     Organizm* getKolidujacy(Organizm* org);
     Wektor2d getWolnePoleObok(Wektor2d p);
+    Organizm* getOrganizmNaPozycji(Wektor2d p);
 
 private:
 
@@ -47,7 +48,7 @@ private:
 
     void pozbadzSieZwlok();
 
-    Organizm* getOrganizmNaPozycji(Wektor2d p);
+
 
 
 };
