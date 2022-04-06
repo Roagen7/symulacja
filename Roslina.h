@@ -26,7 +26,7 @@ public:
 
 //    [[nodiscard]] virtual Roslina * kopia() const;
 
-private:
+protected:
     void rozsiej();
 
 };

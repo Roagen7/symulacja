@@ -31,6 +31,7 @@
 #define TRAWA_SILA 0
 
 #define MLECZ_SILA 0
+#define MLECZ_PROBY 3
 
 #define GUARANA_SILA 0
 

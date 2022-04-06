@@ -3,19 +3,17 @@
 #include "Zwierze.h"
 #include "config.h"
 
-class Wilk : public Zwierze {
+class Owca : public Zwierze{
 
 public:
-
-    Wilk(Wektor2d polozenie);
+    explicit Owca(Wektor2d polozenie);
     [[nodiscard]] std::string rysowanie() const override;
 
 private:
 
-    [[nodiscard]] Wilk* kopia() const override;
+    [[nodiscard]] Owca* kopia() const override;
 
 
 };
-
 
 
