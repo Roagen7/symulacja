@@ -7,13 +7,12 @@ class Wilk : public Zwierze {
 
 public:
 
-    Wilk(Wektor2d polozenie);
+    explicit Wilk(Wektor2d polozenie);
     [[nodiscard]] std::string rysowanie() const override;
 
 private:
 
     [[nodiscard]] Wilk* kopia() const override;
-
 
 };
 

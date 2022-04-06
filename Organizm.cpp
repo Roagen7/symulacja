@@ -72,3 +72,15 @@ void Organizm::setPolozenie(Wektor2d polozenie) {
 
 }
 
+void Organizm::dodajModyfikator(Organizm *organizm) const {
+
+}
+
+void Organizm::setSila(uint sila) {
+    this->sila = sila;
+}
+
+uint Organizm::getSila() {
+    return sila;
+}
+

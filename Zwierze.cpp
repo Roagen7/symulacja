@@ -88,17 +88,17 @@ void Zwierze::cofnijSie() {
 
 void Zwierze::walcz(Organizm *drugi) {
 
-    if(*this > *drugi){
-
-        std::cout << *this << " zjada " << *drugi << std::endl;
-
-        swiat->zabijOrganizm(drugi);
-
-    } else {
+    if(*this < *drugi){
 
         std::cout << *drugi << " zjada " << *this << std::endl;
         swiat->zabijOrganizm(this);
+        dodajModyfikator(drugi);
 
+    } else {
+
+        std::cout << *this << " zjada " << *drugi << std::endl;
+        swiat->zabijOrganizm(drugi);
+        drugi->dodajModyfikator(this);
     }
 
 }

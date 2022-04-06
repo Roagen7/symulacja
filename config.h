@@ -2,8 +2,8 @@
 
 //środowiskowe
 
-#define DOMYSLNA_WYSOKOSC 10
-#define DOMYSLNA_SZEROKOSC 20
+#define DOMYSLNA_WYSOKOSC 20
+#define DOMYSLNA_SZEROKOSC 30
 
 #define P_ROZSIANIA 0.03
 
@@ -34,6 +34,7 @@
 #define MLECZ_PROBY 3
 
 #define GUARANA_SILA 0
+#define GUARANA_ZWIEKSZENIE_SILY 3
 
 #define WILCZE_JAGODY 99
 

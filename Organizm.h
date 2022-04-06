@@ -22,6 +22,8 @@ public:
 
     void starzejSie();
 
+    void setSila(uint sila);
+    uint getSila();
 
     void setSwiat(Swiat* swiat);
     void setPolozenie(Wektor2d polozenie);
@@ -33,6 +35,8 @@ public:
     virtual ~Organizm() = default;
 
     uint getWiek() const;
+
+    virtual void dodajModyfikator(Organizm* organizm) const;
 
 protected:
 

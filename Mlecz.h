@@ -11,8 +11,8 @@ public:
 
     void akcja() override;
 
+private:
+
     [[nodiscard]] Mlecz* kopia() const override;
-
-
 
 };
