@@ -1,8 +1,10 @@
 #pragma once
 
 #include "Organizm.h"
+#include "Swiat.h"
 
 #define INICJATYWA_ROSLINY 0
+#define P_ROZSIANIA 0.03
 
 
 class Roslina : public Organizm {
@@ -22,7 +24,7 @@ public:
     void nowaTura() override {};
 
 private:
-
+    void rozsiej();
 
 };
 

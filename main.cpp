@@ -11,9 +11,9 @@ int main() {
 
     auto* zwie = new Zwierze(Wektor2d{0, 0}, 1, 2);
 
-    swiat.addOrganizm(new Roslina({1,0},0));
+    swiat.addOrganizm(new Roslina({5,5},0));
     swiat.addOrganizm(zwie);
-    swiat.addOrganizm(new Zwierze(Wektor2d{1, 1}, 1, 1));
+    swiat.addOrganizm(new Zwierze(Wektor2d{9, 9}, 1, 1));
 
 
 

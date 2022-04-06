@@ -9,6 +9,11 @@ std::string Roslina::rysowanie() const {
 
 void Roslina::akcja() {
 
+    if((float)rand()/(float) RAND_MAX <= P_ROZSIANIA){
+
+        rozsiej();
+
+    }
 
 
 }
@@ -32,5 +37,19 @@ void Roslina::info(std::ostream &os) const {
 
     " w wieku " << wiek;
 
+
+}
+
+void Roslina::rozsiej() {
+
+    auto pNowy = swiat->getWolnePoleObok(polozenie);
+
+    if(pNowy == polozenie) return;
+
+    auto* org = new Roslina{*this};
+
+    org->setPolozenie(pNowy);
+
+    swiat->addOrganizm(org);
 
 }
