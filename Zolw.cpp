@@ -10,7 +10,7 @@ std::string Zolw::rysowanie() const {
 }
 
 Zolw *Zolw::kopia() const {
-    return new Zolw{*this};
+    return new Zolw{polozenie};
 }
 
 void Zolw::akcja() {

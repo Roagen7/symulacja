@@ -39,6 +39,10 @@ public:
     [[nodiscard]] virtual std::string rysowanie() const = 0;
 
     [[nodiscard]] virtual bool czyOdbilAtak(const Organizm *org) const;
+    [[nodiscard]] virtual bool czyUciekl() const;
+
+    bool ucieczka();
+
 
 protected:
 
@@ -56,6 +60,8 @@ protected:
 
     virtual void info(std::ostream& os) const = 0;
     [[nodiscard]] virtual Organizm* kopia() const = 0;
+
+    [[nodiscard]] virtual bool czyMaDobryWech() const;
 
     friend std::ostream& operator<<(std::ostream& os, const Organizm& organizm);
     friend bool operator<(const Organizm& o1, const Organizm& o2);

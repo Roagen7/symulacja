@@ -20,7 +20,7 @@ struct Wektor2d {
 
     }
 
-    Wektor2d operator+=(Wektor2d o)  {
+    void operator+=(Wektor2d o)  {
 
         y += o.y;
         x += o.x;

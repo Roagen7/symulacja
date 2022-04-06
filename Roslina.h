@@ -24,8 +24,6 @@ public:
 
     void nowaTura() override {};
 
-//    [[nodiscard]] virtual Roslina * kopia() const;
-
 protected:
     void rozsiej();
 

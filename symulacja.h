@@ -12,3 +12,5 @@
 #include "WilczeJagody.h"
 #include "BarszczSosnowskiego.h"
 #include "Zolw.h"
+#include "Lis.h"
+#include "Antylopa.h"

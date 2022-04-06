@@ -3,9 +3,9 @@
 //środowiskowe
 
 #define DOMYSLNA_WYSOKOSC 20
-#define DOMYSLNA_SZEROKOSC 30
+#define DOMYSLNA_SZEROKOSC 50
 
-#define P_ROZSIANIA 0.03
+#define P_ROZSIANIA 0.05
 
 //statystyki
 
@@ -27,6 +27,8 @@
 
 #define ANTYLOPA_SILA 4
 #define ANTYLOPA_INICJATYWA 4
+#define ANTYLOPA_ZASIEG 2
+#define ANTYLOPA_P_UCIECZKI 0.5
 
 //rośliny
 

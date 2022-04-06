@@ -29,6 +29,16 @@ int main() {
     swiat.addOrganizm(new Owca(Wektor2d{17, 18}));
     swiat.addOrganizm(new Zolw(Wektor2d{15, 16}));
     swiat.addOrganizm(new Zolw(Wektor2d{14, 15}));
+    swiat.addOrganizm(new Lis({10,14}));
+    swiat.addOrganizm(new Lis({10,15}));
+    swiat.addOrganizm(new Lis({11,14}));
+    swiat.addOrganizm(new Lis({11,15}));
+
+    swiat.addOrganizm(new Antylopa({10,0}));
+    swiat.addOrganizm(new Antylopa({12,0}));
+
+    swiat.addOrganizm(new Lis({11,14}));
+    swiat.addOrganizm(new Lis({11,15}));
 
 
     while(1){

@@ -8,6 +8,7 @@ void Zwierze::akcja() {
 
 void Zwierze::kolizja() {
 
+
     Organizm* drugi = swiat->getKolidujacy(this);
 
     if(drugi == nullptr) return;
@@ -63,6 +64,8 @@ void Zwierze::cofnijSie() {
 }
 
 void Zwierze::walcz(Organizm *drugi) {
+
+    if(ucieczka() || drugi->ucieczka()) return;
 
     if(*this < *drugi){
 
@@ -145,9 +148,14 @@ void Zwierze::losowyRuch(int zasieg) {
 
         zmienPolozenie(przemieszczenie);
 
-    } while(wczesniejsze == polozenie);
+    } while(wczesniejsze == polozenie ||
+            (czyMaDobryWech() &&
+            swiat->getOrganizmNaPozycji(przemieszczenie) != nullptr &&
+            swiat->getOrganizmNaPozycji(przemieszczenie)->getSila() > getSila()));
 
 
 }
+
+
 
 

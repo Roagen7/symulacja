@@ -13,5 +13,5 @@ std::string Owca::rysowanie() const {
 }
 
 Owca *Owca::kopia() const {
-    return new Owca{*this};
+    return new Owca{polozenie};
 }

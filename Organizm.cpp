@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include "Organizm.h"
+#include "Swiat.h"
 
 Wektor2d Organizm::getPolozenie() const {
     return polozenie;
@@ -86,6 +87,35 @@ uint Organizm::getSila() const {
 }
 
 bool Organizm::czyOdbilAtak(const Organizm *org) const{
+    return false;
+}
+
+bool Organizm::czyMaDobryWech() const{
+    return false;
+}
+
+bool Organizm::czyUciekl() const {
+    return false;
+}
+
+bool Organizm::ucieczka() {
+
+    if(czyUciekl()){
+
+        Wektor2d nowePole = swiat->getWolnePoleObok(polozenie);
+
+        if(nowePole == polozenie){
+
+            return false;
+
+        }
+
+        setPolozenie(nowePole);
+        return true;
+
+
+    }
+
     return false;
 }
 

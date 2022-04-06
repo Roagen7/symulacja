@@ -10,5 +10,5 @@ std::string Wilk::rysowanie() const {
 }
 
 Wilk *Wilk::kopia() const{
-    return new Wilk{*this};
+    return new Wilk{polozenie};
 }
