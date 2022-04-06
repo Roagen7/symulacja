@@ -2,33 +2,9 @@
 #include "Zwierze.h"
 
 void Zwierze::akcja() {
-
-    int koordynaty[] = {-1,0,1,};
-
-    Wektor2d przemieszczenie{0,0};
-    Wektor2d wczesniejsze = polozenie;
-
-    do {
-        polozenie = wczesniejsze;
-
-        int randX = koordynaty[random() % 3];
-        int randY = koordynaty[random() % 3];
-
-        przemieszczenie = {randY, randX};
-
-        zmienPolozenie(przemieszczenie);
-
-    } while(wczesniejsze == polozenie);
-
-
-
+    losowyRuch();
 
 }
-
-//std::string Zwierze::rysowanie() const {
-//
-//    return "\e[31mz\e[0m";
-//}
 
 void Zwierze::kolizja() {
 
@@ -90,11 +66,25 @@ void Zwierze::walcz(Organizm *drugi) {
 
     if(*this < *drugi){
 
+        if(this->czyOdbilAtak(drugi)){
+
+            cofnijSie();
+            return;
+
+        }
+
         std::cout << *drugi << " zjada " << *this << std::endl;
         this->zabij();
         dodajModyfikator(drugi);
 
     } else {
+
+        if(drugi->czyOdbilAtak(this)){
+
+            cofnijSie();
+            return;
+
+        }
 
         std::cout << *this << " zjada " << *drugi << std::endl;
         drugi->zabij();
@@ -135,6 +125,28 @@ void Zwierze::rozmnozSie(Zwierze *drugi) {
 void Zwierze::nowaTura() {
 
     rozmnozylSie = false;
+
+}
+
+void Zwierze::losowyRuch(int zasieg) {
+
+    int koordynaty[] = {-1 * (int)zasieg,0,zasieg};
+
+    Wektor2d przemieszczenie{0,0};
+    Wektor2d wczesniejsze = polozenie;
+
+    do {
+        polozenie = wczesniejsze;
+
+        int randX = koordynaty[random() % 3];
+        int randY = koordynaty[random() % 3];
+
+        przemieszczenie = {randY, randX};
+
+        zmienPolozenie(przemieszczenie);
+
+    } while(wczesniejsze == polozenie);
+
 
 }
 

@@ -27,6 +27,8 @@ int main() {
     swiat.addOrganizm(new Owca(Wektor2d{19, 18}));
     swiat.addOrganizm(new Owca(Wektor2d{18, 18}));
     swiat.addOrganizm(new Owca(Wektor2d{17, 18}));
+    swiat.addOrganizm(new Zolw(Wektor2d{15, 16}));
+    swiat.addOrganizm(new Zolw(Wektor2d{14, 15}));
 
 
     while(1){

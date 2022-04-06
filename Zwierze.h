@@ -4,6 +4,7 @@
 
 #include "Organizm.h"
 #include "Swiat.h"
+#include "config.h"
 
 class Zwierze : public Organizm {
 
@@ -16,12 +17,17 @@ public:
 
     void info(std::ostream &os) const override;
 
-//    [[nodiscard]] std::string rysowanie() const override;
     void nowaTura() override;
+
+protected:
+
+    void losowyRuch(int zasieg = 1);
 
 private:
 
     bool rozmnozylSie = false;
+
+
 
     void zmienPolozenie(Wektor2d przemieszczenie);
 

@@ -22,6 +22,8 @@
 
 #define ZOLW_SILA 2
 #define ZOLW_INICJATYWA 1
+#define ZOLW_P_RUCHU 0.25
+#define ZOLW_OBRONA 5
 
 #define ANTYLOPA_SILA 4
 #define ANTYLOPA_INICJATYWA 4

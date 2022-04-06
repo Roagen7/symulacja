@@ -81,7 +81,11 @@ void Organizm::setSila(uint sila) {
     this->sila = sila;
 }
 
-uint Organizm::getSila() {
+uint Organizm::getSila() const {
     return sila;
+}
+
+bool Organizm::czyOdbilAtak(const Organizm *org) const{
+    return false;
 }
 
