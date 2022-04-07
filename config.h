@@ -11,6 +11,9 @@
 
 //zwierzęta
 
+#define CZLOWIEK_SILA 5
+#define CZLOWIEK_INICJATYWA 4
+
 #define WILK_SILA 9
 #define WILK_INICJATYWA 5
 

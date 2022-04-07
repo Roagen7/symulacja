@@ -9,7 +9,19 @@
 class Swiat {
 
 public:
+
+    enum Ruch {
+        GORA,
+        DOL,
+        LEWO,
+        PRAWO,
+        SPECJALNY
+    };
+
     Swiat(uint wysokosc, uint szerokosc);
+    Swiat(uint wysokosc, uint szerokosc, std::vector<Organizm*>&& organizmy);
+
+    ~Swiat();
 
     void obecnyStan();
     void wykonajTure();
@@ -19,7 +31,6 @@ public:
     void addOrganizm(Organizm* organizm);
     void zabijOrganizm(Organizm* organizm);
 
-
     uint getWysokosc();
     uint getSzerokosc();
     uint getNrTury() const;
@@ -28,12 +39,16 @@ public:
     Wektor2d getWolnePoleObok(Wektor2d p);
     Organizm* getOrganizmNaPozycji(Wektor2d p);
 
+    void setRuch(Ruch ruch);
+
 private:
 
     uint wysokosc;
     uint szerokosc;
 
     uint nrTury = 0;
+
+    Ruch ruch;
 
     std::vector<Organizm*> organizmy;
 

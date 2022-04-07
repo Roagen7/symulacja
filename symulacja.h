@@ -14,3 +14,4 @@
 #include "Zolw.h"
 #include "Lis.h"
 #include "Antylopa.h"
+#include "Czlowiek.h"

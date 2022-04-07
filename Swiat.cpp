@@ -267,3 +267,33 @@ void Swiat::oglosNowaTure() {
     }
 
 }
+
+Swiat::Swiat(uint wysokosc, uint szerokosc, std::vector<Organizm*>&& organizmy):
+    szerokosc(szerokosc),
+    wysokosc(wysokosc),
+    organizmy(std::move(organizmy)){
+
+    for(auto* org : this->organizmy){
+
+        org->setSwiat(this);
+
+    }
+
+}
+
+Swiat::~Swiat() {
+
+    for(auto* org : organizmy){
+
+        delete org;
+
+    }
+
+}
+
+void Swiat::setRuch(Swiat::Ruch ruch) {
+
+    this->ruch = ruch;
+
+}
+
