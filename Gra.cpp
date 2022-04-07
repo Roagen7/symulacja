@@ -88,7 +88,7 @@ void Gra::swiatBazowy() {
 
 void Gra::opcjeGracza() {
 
-    std::cout << "sterowanie: enter) nastepna tura strzalki) czlowiek 1)szybkosc antylopy q) wyjscie" << std::endl;
+    std::cout << "sterowanie: enter) nastepna tura strzalki) czlowiek z)szybkosc antylopy q) wyjscie" << std::endl;
 
     switch(getch()){
 
@@ -117,8 +117,9 @@ void Gra::opcjeGracza() {
             }
             break;
 
-        case '1':
+        case 'z':
             swiat->setRuch(Swiat::Ruch::SPECJALNY);
+
             break;
 
     }

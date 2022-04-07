@@ -13,6 +13,9 @@ public:
 
 private:
 
+    int turySpecjalne = 0;
+
+
     [[nodiscard]] Czlowiek* kopia() const override;
 
 
