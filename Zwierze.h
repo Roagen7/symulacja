@@ -23,13 +23,12 @@ protected:
 
     void losowyRuch(int zasieg = 1);
 
+    void zmienPolozenie(Wektor2d przemieszczenie);
+
 private:
 
     bool rozmnozylSie = false;
 
-
-
-    void zmienPolozenie(Wektor2d przemieszczenie);
 
     void walcz(Organizm* drugi);
 

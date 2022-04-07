@@ -9,6 +9,7 @@ public:
     explicit Czlowiek(Wektor2d polozenie);
     [[nodiscard]] std::string rysowanie() const override;
 
+    void akcja() override;
 
 private:
 

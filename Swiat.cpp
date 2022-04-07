@@ -68,7 +68,7 @@ Organizm *Swiat::getOrganizmNaPozycji(Wektor2d p) {
 
     for(auto* organizm : organizmy){
 
-        if(p == organizm->getPolozenie()){
+        if(p == organizm->getPolozenie() && organizm->isZywy()){
 
             return organizm;
 
@@ -295,5 +295,16 @@ void Swiat::setRuch(Swiat::Ruch ruch) {
 
     this->ruch = ruch;
 
+}
+
+Swiat::Ruch Swiat::getRuch() {
+    return ruch;
+}
+
+Swiat::Ruch Swiat::popRuch() {
+    auto obecny = ruch;
+    ruch = Swiat::Ruch::STOJ;
+
+    return obecny;
 }
 

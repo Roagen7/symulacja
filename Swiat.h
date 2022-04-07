@@ -15,7 +15,8 @@ public:
         DOL,
         LEWO,
         PRAWO,
-        SPECJALNY
+        SPECJALNY,
+        STOJ
     };
 
     Swiat(uint wysokosc, uint szerokosc);
@@ -40,6 +41,8 @@ public:
     Organizm* getOrganizmNaPozycji(Wektor2d p);
 
     void setRuch(Ruch ruch);
+    Ruch getRuch();
+    Ruch popRuch();
 
 private:
 
