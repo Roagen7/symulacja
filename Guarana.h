@@ -11,6 +11,8 @@ public:
 
     void dodajModyfikator(Organizm* organizm) const override;
 
+    std::string jakoString() const override;
+
 private:
 
     [[nodiscard]] Guarana* kopia() const override;

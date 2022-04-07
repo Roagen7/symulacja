@@ -17,3 +17,7 @@ void Guarana::dodajModyfikator(Organizm *organizm) const {
     organizm->setSila(organizm->getSila() + GUARANA_ZWIEKSZENIE_SILY);
 
 }
+
+std::string Guarana::jakoString() const {
+    return "GUARANA";
+}

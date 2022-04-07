@@ -13,6 +13,8 @@ public:
 
     void akcja() override;
 
+    std::string jakoString() const override;
+
 private:
 
     [[nodiscard]] BarszczSosnowskiego* kopia() const override;

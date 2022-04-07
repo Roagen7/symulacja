@@ -40,6 +40,8 @@ public:
     Wektor2d getWolnePoleObok(Wektor2d p);
     Organizm* getOrganizmNaPozycji(Wektor2d p);
 
+    const std::vector<Organizm*>& getOrganizmy();
+
     void setRuch(Ruch ruch);
     Ruch getRuch();
     Ruch popRuch();
@@ -51,7 +53,7 @@ private:
 
     uint nrTury = 0;
 
-    Ruch ruch;
+    Ruch ruch = Ruch::STOJ;
 
     std::vector<Organizm*> organizmy;
 

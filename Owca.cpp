@@ -15,3 +15,7 @@ std::string Owca::rysowanie() const {
 Owca *Owca::kopia() const {
     return new Owca{polozenie};
 }
+
+std::string Owca::jakoString() const {
+    return "OWCA";
+}

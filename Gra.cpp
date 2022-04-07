@@ -18,7 +18,7 @@ void Gra::menu() {
     bool menu = true;
 
     while(menu){
-
+        system("clear");
         std::cout << "z) bazowy swiat \nx) swiat z pliku \nq) wyjdz" << std::endl;
 
         std::cin >> opcja;

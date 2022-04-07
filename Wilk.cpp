@@ -12,3 +12,7 @@ std::string Wilk::rysowanie() const {
 Wilk *Wilk::kopia() const{
     return new Wilk{polozenie};
 }
+
+std::string Wilk::jakoString() const {
+    return "WILK";
+}

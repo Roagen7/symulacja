@@ -10,7 +10,7 @@ public:
     [[nodiscard]] std::string rysowanie() const override;
 
     void dodajModyfikator(Organizm* organizm) const override;
-
+    std::string jakoString() const override;
 private:
 
     [[nodiscard]] WilczeJagody* kopia() const override;

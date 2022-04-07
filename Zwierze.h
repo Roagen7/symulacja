@@ -15,9 +15,9 @@ public:
     void akcja() override;
     void kolizja() override;
 
-    void info(std::ostream &os) const override;
-
     void nowaTura() override;
+
+    std::string jakoString() const override;
 
 protected:
 

@@ -30,11 +30,6 @@ uint Organizm::getInicjatywa() const {
     return inicjatywa;
 }
 
-std::ostream &operator<<(std::ostream &os, const Organizm& organizm) {
-
-        organizm.info(os);
-
-}
 
 void Organizm::starzejSie() {
 
@@ -63,7 +58,7 @@ bool Organizm::isZywy() const {
 }
 
 void Organizm::zabij() {
-    std::cout << *this << "umiera" << std::endl;
+    std::cout << this->jakoString() << " umiera" << std::endl;
     zywy = false;
 
 }

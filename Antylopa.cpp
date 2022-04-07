@@ -27,3 +27,7 @@ bool Antylopa::czyUciekl() const {
     return (float)rand()/(float)RAND_MAX < ANTYLOPA_P_UCIECZKI;
 
 }
+
+std::string Antylopa::jakoString() const {
+    return "ANTYLOPA";
+}

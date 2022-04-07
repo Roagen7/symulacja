@@ -13,6 +13,8 @@ public:
 
     bool czyOdbilAtak(const Organizm *org) const override;
 
+    std::string jakoString() const override;
+
 private:
 
     [[nodiscard]] Zolw* kopia() const override;

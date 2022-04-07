@@ -20,4 +20,8 @@ bool Lis::czyMaDobryWech() const {
     return true;
 }
 
+std::string Lis::jakoString() const {
+    return "LIS";
+}
+
 

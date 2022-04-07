@@ -27,18 +27,9 @@ void Roslina::kolizja() {
 Roslina::Roslina(Wektor2d pozycja, uint sila):
     Organizm(pozycja,sila,INICJATYWA_ROSLINY) {
 
-    std::cout << *this << " wyrasta" << std::endl;
-
 }
 
-void Roslina::info(std::ostream &os) const {
 
-    os << "Roslina " <<
-
-    " w wieku " << wiek;
-
-
-}
 
 void Roslina::rozsiej() {
 
@@ -55,6 +46,10 @@ void Roslina::rozsiej() {
         swiat->addOrganizm(org);
     }
 
+}
+
+std::string Roslina::jakoString() const {
+    return "";
 }
 
 //Roslina * Roslina::kopia() const {

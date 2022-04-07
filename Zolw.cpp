@@ -23,3 +23,7 @@ bool Zolw::czyOdbilAtak(const Organizm *org) const {
 
     return org->getSila() < ZOLW_OBRONA;
 }
+
+std::string Zolw::jakoString() const {
+    return "ZOLW";
+}

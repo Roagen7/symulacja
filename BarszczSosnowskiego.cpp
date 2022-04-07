@@ -38,3 +38,7 @@ void BarszczSosnowskiego::akcja() {
 
 
 }
+
+std::string BarszczSosnowskiego::jakoString() const {
+    return "BARSZCZ_SOSNOWSKIEGO";
+}

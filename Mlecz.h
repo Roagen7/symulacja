@@ -11,6 +11,8 @@ public:
 
     void akcja() override;
 
+    std::string jakoString() const override;
+
 private:
 
     [[nodiscard]] Mlecz* kopia() const override;

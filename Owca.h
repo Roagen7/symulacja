@@ -8,7 +8,7 @@ class Owca : public Zwierze{
 public:
     explicit Owca(Wektor2d polozenie);
     [[nodiscard]] std::string rysowanie() const override;
-
+    std::string jakoString() const override;
 private:
 
     [[nodiscard]] Owca* kopia() const override;

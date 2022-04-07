@@ -1,0 +1,24 @@
+plik objaśniający format zapisu stanu gry
+
+nagłówek pliku:
+
+NR_TURY WYSOKOSC SZEROKOSC
+
+reszta pliku:
+
+ZWIERZE|ROSLINA WIEK POLOZENIE_Y POLOZENIE_X
+
+DOPUSZCZALNE ZWIERZĘTA
+    CZLOWIEK
+    WILK
+    OWCA
+    LIST
+    ZOLW
+    ANTYLOPA
+
+DOPUSZCZALNE ROŚLINY
+    TRAWA
+    MLECZ
+    GUARANA
+    WILCZE_JAGODY
+    BARSZCZ_SOSNOWSKIEGO

@@ -11,3 +11,7 @@ std::string Trawa::rysowanie() const {
 Trawa *Trawa::kopia() const {
     return new Trawa{*this};
 }
+
+std::string Trawa::jakoString() const {
+    return "TRAWA";
+}

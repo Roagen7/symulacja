@@ -26,3 +26,7 @@ void Mlecz::akcja() {
 
 
 }
+
+std::string Mlecz::jakoString() const {
+    return "MLECZ";
+}

@@ -78,3 +78,7 @@ void Czlowiek::akcja() {
     }
 
 }
+
+std::string Czlowiek::jakoString() const {
+    return "CZLOWIEK";
+}

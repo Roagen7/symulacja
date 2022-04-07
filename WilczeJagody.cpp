@@ -19,3 +19,7 @@ void WilczeJagody::dodajModyfikator(Organizm *organizm) const {
 WilczeJagody *WilczeJagody::kopia() const {
     return new WilczeJagody{*this};
 }
+
+std::string WilczeJagody::jakoString() const {
+    return "WILCZE_JAGODY";
+}

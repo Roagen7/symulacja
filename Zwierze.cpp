@@ -30,15 +30,6 @@ Zwierze::Zwierze(Wektor2d polozenie, uint sila, uint inicjatywa) :
 Organizm(polozenie, sila, inicjatywa),
 wczesniejszePolozenie(polozenie) {
 
-    std::cout << *this << " rodzi sie" << std::endl;
-
-}
-
-void Zwierze::info(std::ostream &os) const {
-
-    os << "Zwierze" <<
-    " w wieku " << wiek;
-
 }
 
 void Zwierze::zmienPolozenie(Wektor2d przemieszczenie) {
@@ -76,7 +67,7 @@ void Zwierze::walcz(Organizm *drugi) {
 
         }
 
-        std::cout << *drugi << " zjada " << *this << std::endl;
+        std::cout << drugi->jakoString() << " zjada " << this->jakoString() << std::endl;
         this->zabij();
         dodajModyfikator(drugi);
 
@@ -89,7 +80,7 @@ void Zwierze::walcz(Organizm *drugi) {
 
         }
 
-        std::cout << *this << " zjada " << *drugi << std::endl;
+        std::cout << this->jakoString() << " zjada " << drugi->jakoString() << std::endl;
         drugi->zabij();
         drugi->dodajModyfikator(this);
     }
@@ -121,7 +112,7 @@ void Zwierze::rozmnozSie(Zwierze *drugi) {
     rozmnozylSie = true;
     drugi->rozmnozylSie = true;
 
-    std::cout << *this << " rozmnaza sie z " << *drugi << std::endl;
+    std::cout << this->jakoString() << " rozmnaza sie z " << drugi->jakoString() << std::endl;
 
 }
 
@@ -154,6 +145,10 @@ void Zwierze::losowyRuch(int zasieg) {
             swiat->getOrganizmNaPozycji(przemieszczenie)->getSila() > getSila()));
 
 
+}
+
+std::string Zwierze::jakoString() const {
+    return "";
 }
 
 

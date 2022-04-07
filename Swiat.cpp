@@ -135,7 +135,7 @@ void Swiat::logOrganizmy() {
 
         if(organizm->isZywy()){
 
-            std::cout << "-" <<*organizm << std::endl;
+            std::cout << "-" <<organizm->jakoString() << std::endl;
 
         }
 
@@ -306,5 +306,11 @@ Swiat::Ruch Swiat::popRuch() {
     ruch = Swiat::Ruch::STOJ;
 
     return obecny;
+}
+
+const std::vector<Organizm *> &Swiat::getOrganizmy() {
+
+    return organizmy;
+
 }
 

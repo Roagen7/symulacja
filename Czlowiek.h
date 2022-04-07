@@ -11,6 +11,8 @@ public:
 
     void akcja() override;
 
+    std::string jakoString() const override;
+
 private:
 
     int turySpecjalne = 0;

@@ -12,6 +12,8 @@ public:
 
     bool czyUciekl() const override;
 
+    std::string jakoString() const override;
+
 private:
 
     [[nodiscard]] Antylopa* kopia() const override;

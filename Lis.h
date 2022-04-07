@@ -9,6 +9,7 @@ public:
     explicit Lis(Wektor2d polozenie);
     [[nodiscard]] std::string rysowanie() const override;
 
+    std::string jakoString() const override;
 
 private:
 
