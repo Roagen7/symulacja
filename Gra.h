@@ -2,6 +2,7 @@
 
 #include "symulacja.h"
 #include "config.h"
+#include "MenedzerPlikow.h"
 
 #include <unistd.h>
 
@@ -19,6 +20,7 @@ private:
     bool graj=true;
 
     Swiat* swiat;
+    MenedzerPlikow menedzerPlikow;
 
     void start();
 

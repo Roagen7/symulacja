@@ -10,10 +10,12 @@ void MenedzerPlikow::zapisz(Swiat *swiat, std::string plik) {
 
         out <<  organizm->jakoString() << " " <<
                 organizm->getWiek() << " " <<
-                organizm->getPolozenie().y <<
+                organizm->getPolozenie().y << " " <<
                 organizm->getPolozenie().x << std::endl;
 
     }
+
+    out.close();
 
 }
 

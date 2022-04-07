@@ -88,7 +88,7 @@ void Gra::swiatBazowy() {
 
 void Gra::opcjeGracza() {
 
-    std::cout << "sterowanie: enter) nastepna tura strzalki) czlowiek z)szybkosc antylopy q) wyjscie" << std::endl;
+    std::cout << "sterowanie: enter) nastepna tura strzalki) czlowiek z)szybkosc antylopy w)zapis i wyjście q) wyjscie bez zapisu" << std::endl;
 
     switch(getch()){
 
@@ -120,6 +120,11 @@ void Gra::opcjeGracza() {
         case 'z':
             swiat->setRuch(Swiat::Ruch::SPECJALNY);
 
+            break;
+
+        case 'w':
+            menedzerPlikow.zapisz(swiat,"../stany_gry/zapis.state");
+            graj=false;
             break;
 
     }
