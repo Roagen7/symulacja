@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Zolw.h"
 
 Zolw::Zolw(Wektor2d polozenie): Zwierze(polozenie,ZOLW_SILA,ZOLW_INICJATYWA) {

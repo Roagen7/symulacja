@@ -1,4 +1,3 @@
-
 #include "Wilk.h"
 
 Wilk::Wilk(Wektor2d polozenie) : Zwierze(polozenie, WILK_SILA, WILK_INICJATYWA) {

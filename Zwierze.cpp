@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Zwierze.h"
 
 void Zwierze::akcja() {

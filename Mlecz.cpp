@@ -1,7 +1,3 @@
-//
-// Created by roagen on 06.04.2022.
-//
-
 #include "Mlecz.h"
 
 Mlecz::Mlecz(Wektor2d polozenie): Roslina(polozenie,MLECZ_SILA) {

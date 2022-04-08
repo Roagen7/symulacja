@@ -1,7 +1,3 @@
-//
-// Created by roagen on 06.04.2022.
-//
-
 #include "Antylopa.h"
 
 Antylopa::Antylopa(Wektor2d polozenie) : Zwierze(polozenie,ANTYLOPA_SILA,ANTYLOPA_INICJATYWA){

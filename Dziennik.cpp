@@ -1,9 +1,4 @@
-//
-// Created by roagen on 08.04.2022.
-//
-
 #include "Dziennik.h"
-
 
 void Dziennik::operator<<(std::string komunikat) {
 

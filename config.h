@@ -1,4 +1,12 @@
 #pragma once
+/*
+ * plik konfiguracyjny do symulacji
+ */
+
+
+//systemu
+
+#define MAX_DLUGOSC_PLIKU_STATE 10000
 
 //środowiskowe
 

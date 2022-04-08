@@ -1,7 +1,3 @@
-//
-// Created by roagen on 06.04.2022.
-//
-
 #include "WilczeJagody.h"
 
 WilczeJagody::WilczeJagody(Wektor2d polozenie): Roslina(polozenie,WILCZE_JAGODY_SILA){

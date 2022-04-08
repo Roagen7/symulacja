@@ -50,7 +50,6 @@ void Czlowiek::akcja() {
             zmienPolozenie({-1 * zasieg,0});
             break;
 
-
         case Swiat::Ruch::DOL:
             zmienPolozenie({zasieg,0});
             break;

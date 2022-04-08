@@ -1,9 +1,8 @@
 #pragma once
 
-#include <string>
-
 #include "Wektor2d.h"
 
+#include <string>
 
 class Swiat;
 
@@ -45,6 +44,10 @@ public:
     bool ucieczka();
 
 
+    void setWiek(uint wiek);
+
+    [[nodiscard]] virtual Organizm* kopia() const = 0;
+
 protected:
 
     uint sila;
@@ -57,10 +60,6 @@ protected:
 
     Organizm(Wektor2d polozenie, uint sila, uint inicjatywa);
 
-    void setWiek(uint wiek);
-
-
-    [[nodiscard]] virtual Organizm* kopia() const = 0;
 
     [[nodiscard]] virtual bool czyMaDobryWech() const;
 

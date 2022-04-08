@@ -1,10 +1,10 @@
 #pragma once
 
-#include <random>
-
 #include "Organizm.h"
 #include "Swiat.h"
 #include "config.h"
+
+#include <random>
 
 class Zwierze : public Organizm {
 

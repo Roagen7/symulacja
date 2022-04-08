@@ -1,5 +1,3 @@
-
-#include <iostream>
 #include "Organizm.h"
 #include "Swiat.h"
 

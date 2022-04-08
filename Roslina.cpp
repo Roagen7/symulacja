@@ -1,5 +1,5 @@
 #include "Roslina.h"
-#include <iostream>
+
 
 std::string Roslina::rysowanie() const {
 

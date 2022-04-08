@@ -1,6 +1,5 @@
-#include <iostream>
 #include "BarszczSosnowskiego.h"
-#include "Zwierze.h"
+
 
 BarszczSosnowskiego::BarszczSosnowskiego(Wektor2d polozenie) : Roslina(polozenie,BARSZCZ_SOSNOWSKIEGO_SILA){
 

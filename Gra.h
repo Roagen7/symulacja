@@ -1,10 +1,12 @@
 #pragma once
 
+#include <unistd.h>
+#include <iostream>
+#include <termios.h>
+
 #include "symulacja.h"
 #include "config.h"
 #include "MenedzerPlikow.h"
-
-#include <unistd.h>
 
 
 class Gra {
@@ -19,10 +21,16 @@ private:
 
     bool graj=true;
 
-    Swiat* swiat;
+    Swiat* swiat = nullptr;
     MenedzerPlikow menedzerPlikow;
 
     void start();
+
+    void zapisDialog();
+
+    void wczytajDialog();
+
+    void dziennikDialog();
 
     void opcjeGracza();
 

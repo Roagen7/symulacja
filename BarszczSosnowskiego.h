@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Zwierze.h"
 #include "Roslina.h"
 
 class BarszczSosnowskiego : public Roslina{
@@ -16,7 +17,7 @@ public:
     std::string jakoString() const override;
 
 private:
-
+    
     [[nodiscard]] BarszczSosnowskiego* kopia() const override;
 
 

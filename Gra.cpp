@@ -1,11 +1,4 @@
-
-#include <iostream>
-#include <termios.h>
-
-
 #include "Gra.h"
-
-
 
 void Gra::menu() {
 
@@ -27,6 +20,9 @@ void Gra::menu() {
 
             case 'x':
 
+                wczytajDialog();
+                czyNastepnaTura = true;
+                menu= false;
                 break;
 
             case 'q':
@@ -109,18 +105,12 @@ void Gra::opcjeGracza() {
             break;
 
         case 'w':
-            menedzerPlikow.zapisz(swiat,"../stany_gry/zapis.state");
-            graj=false;
+            zapisDialog();
+
             break;
 
         case 'd':
-            system("clear");
-
-            swiat->getDziennik().wypisz();
-            std::cout << "dowolny przycisk by kontynuować..." << std::endl;
-            getch();
-            czyNastepnaTura=false;
-
+            dziennikDialog();
             break;
 
     }
@@ -184,9 +174,51 @@ void Gra::rysujInterfejs() {
     std::cout << "sterowanie: " <<
     "enter) nastepna tura " <<
     "strzalki) czlowiek " <<
-    "z)szybkosc antylopy "  <<
-    "w)zapis i wyjście " <<
-    "q) wyjscie bez zapisu " <<
-    "d) dziennik" << std::endl;
+    "z) szybkosc antylopy "  <<
+    "w) zapis " <<
+    "q) wyjscie " <<
+    "d) dziennik " << std::endl;
+
+}
+
+void Gra::zapisDialog() {
+
+            system("clear");
+
+            std::string nazwaPliku;
+            std::cout << "podaj nazwe pliku: ";
+            std::cin >> nazwaPliku;
+
+            menedzerPlikow.zapisz(swiat,"../stany_gry/" + nazwaPliku + ".state");
+            czyNastepnaTura=false;
+
+}
+
+void Gra::dziennikDialog() {
+
+    system("clear");
+
+    swiat->getDziennik().wypisz();
+    std::cout << "dowolny przycisk by kontynuować..." << std::endl;
+    getch();
+    czyNastepnaTura=false;
+
+}
+
+void Gra::wczytajDialog() {
+
+    std::cout << "podaj nazwe pliku: ";
+
+    std::string nazwa;
+    std::cin >> nazwa;
+
+    if(menedzerPlikow.wczytaj(swiat,"../stany_gry/" + nazwa + ".state")){
+
+        std::cout << "dowolny przycisk by kontynuować..." << std::endl;
+        getch();
+        graj = false;
+
+    }
+    czyNastepnaTura=false;
 
 }

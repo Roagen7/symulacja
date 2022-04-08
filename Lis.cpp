@@ -1,7 +1,3 @@
-//
-// Created by roagen on 06.04.2022.
-//
-
 #include "Lis.h"
 
 Lis::Lis(Wektor2d polozenie) : Zwierze(polozenie, LIS_SILA, LIS_INICJATYWA){

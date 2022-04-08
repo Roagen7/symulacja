@@ -2,8 +2,9 @@
 
 #include "Organizm.h"
 #include "Swiat.h"
-
 #include "config.h"
+
+#include <iostream>
 
 #define INICJATYWA_ROSLINY 0
 

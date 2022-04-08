@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Swiat.h"
 
 void Swiat::wykonajTure() {
@@ -288,4 +287,12 @@ const std::vector<Organizm *> &Swiat::getOrganizmy() {
 Dziennik &Swiat::getDziennik() {
     return dziennik;
 }
+
+void Swiat::setNrTury(int tura) {
+
+    this->nrTury = tura;
+
+}
+
+
 

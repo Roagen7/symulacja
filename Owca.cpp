@@ -1,7 +1,3 @@
-//
-// Created by roagen on 06.04.2022.
-//
-
 #include "Owca.h"
 
 Owca::Owca(Wektor2d polozenie): Zwierze(polozenie,OWCA_SILA,OWCA_INICJATYWA) {

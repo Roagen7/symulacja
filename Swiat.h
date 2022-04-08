@@ -1,14 +1,15 @@
 #pragma once
 
-#include <vector>
-
 #include "Organizm.h"
 #include "Dziennik.h"
 
+#include <vector>
 
 class Swiat {
 
 public:
+
+
 
     enum Ruch {
         GORA,
@@ -21,6 +22,7 @@ public:
 
     Swiat(uint wysokosc, uint szerokosc);
     Swiat(uint wysokosc, uint szerokosc, std::vector<Organizm*>&& organizmy);
+
 
     ~Swiat();
 
@@ -50,6 +52,8 @@ public:
     void rysujSwiat();
 
 
+    void setNrTury(int tura);
+
 private:
 
     uint wysokosc;
@@ -71,8 +75,6 @@ private:
 
 
     void pozbadzSieZwlok();
-
-
 
 
 };
