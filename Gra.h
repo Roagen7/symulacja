@@ -11,11 +11,11 @@ class Gra {
 
 public:
 
-    Gra();
-
     void menu();
 
 private:
+
+    bool czyNastepnaTura = true;
 
     bool graj=true;
 
@@ -25,6 +25,10 @@ private:
     void start();
 
     void opcjeGracza();
+
+    void opcjePoruszanie();
+
+    void rysujInterfejs();
 
     void swiatBazowy();
 

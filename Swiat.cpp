@@ -3,27 +3,20 @@
 
 void Swiat::wykonajTure() {
 
-
-
     system("clear");
     oglosNowaTure();
 
-
     nrTury++;
 
-    rysujNaglowek();
-
     ruchOrganizmow();
-
-    std::cout << "~~~~~~~~~~~~~~~~~~\e[0m" << std::endl << std::endl;
-
-    rysujSwiat();
 
     pozbadzSieZwlok();
 
 }
 
 void Swiat::rysujSwiat() {
+
+    rysujNaglowek();
 
     rysujGranice();
 
@@ -90,8 +83,6 @@ void Swiat::rysujNaglowek() const {
 
     std::cout <<  std::endl<<"\e[35mtura nr " << nrTury  <<"\e[0m"<<std::endl << std::endl;
 
-    std::cout <<"\e[34m Dziennik~~~~~~~~~~" << std::endl;
-
 
 }
 
@@ -129,19 +120,7 @@ void Swiat::ruchOrganizmow() {
 
 }
 
-void Swiat::logOrganizmy() {
-    std::cout << "lista zywych zwierzat: [ " << std::endl;
-    for(const auto* organizm : organizmy){
 
-        if(organizm->isZywy()){
-
-            std::cout << "-" <<organizm->jakoString() << std::endl;
-
-        }
-
-    }
-    std::cout << "]" << std::endl;
-}
 
 uint Swiat::getWysokosc() {
     return wysokosc;
@@ -173,16 +152,6 @@ void Swiat::zabijOrganizm(Organizm *organizm) {
 
 }
 
-void Swiat::obecnyStan() {
-
-    std::cout << "\e[34m";
-    logOrganizmy();
-    std::cout << "\e[0m";
-
-    rysujSwiat();
-
-
-}
 
 void Swiat::rysujGranice() const {
 
@@ -260,6 +229,8 @@ Wektor2d Swiat::getWolnePoleObok(Wektor2d p) {
 
 void Swiat::oglosNowaTure() {
 
+    dziennik.czysc();
+
     for(auto* organizm : organizmy){
 
         organizm->nowaTura();
@@ -312,5 +283,9 @@ const std::vector<Organizm *> &Swiat::getOrganizmy() {
 
     return organizmy;
 
+}
+
+Dziennik &Swiat::getDziennik() {
+    return dziennik;
 }
 

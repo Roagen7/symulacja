@@ -67,7 +67,10 @@ void Zwierze::walcz(Organizm *drugi) {
 
         }
 
-        std::cout << drugi->jakoString() << " zjada " << this->jakoString() << std::endl;
+        std::string komunikat = drugi->jakoString() + " zjada " + this->jakoString();
+
+        swiat->getDziennik() << komunikat;
+
         this->zabij();
         dodajModyfikator(drugi);
 
@@ -79,8 +82,10 @@ void Zwierze::walcz(Organizm *drugi) {
             return;
 
         }
+        std::string komunikat = this->jakoString() + " zjada " + drugi->jakoString();
 
-        std::cout << this->jakoString() << " zjada " << drugi->jakoString() << std::endl;
+        swiat->getDziennik() << komunikat;
+
         drugi->zabij();
         drugi->dodajModyfikator(this);
     }
@@ -112,7 +117,9 @@ void Zwierze::rozmnozSie(Zwierze *drugi) {
     rozmnozylSie = true;
     drugi->rozmnozylSie = true;
 
-    std::cout << this->jakoString() << " rozmnaza sie z " << drugi->jakoString() << std::endl;
+    std::string komunikat = this->jakoString() + " rozmnaza sie z " + drugi->jakoString();
+    swiat->getDziennik() << komunikat;
+
 
 }
 

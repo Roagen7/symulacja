@@ -6,11 +6,6 @@
 #include "Gra.h"
 
 
-Gra::Gra() {
-
-    menu();
-
-}
 
 void Gra::menu() {
 
@@ -45,12 +40,17 @@ void Gra::menu() {
 
 void Gra::start() {
 
-    system("clear");
 
     while(graj){
 
+        if(czyNastepnaTura){
 
-        swiat->wykonajTure();
+            swiat->wykonajTure();
+
+        }
+
+        rysujInterfejs();
+
         opcjeGracza();
 
     }
@@ -88,7 +88,8 @@ void Gra::swiatBazowy() {
 
 void Gra::opcjeGracza() {
 
-    std::cout << "sterowanie: enter) nastepna tura strzalki) czlowiek z)szybkosc antylopy w)zapis i wyjście q) wyjscie bez zapisu" << std::endl;
+
+    czyNastepnaTura = true;
 
     switch(getch()){
 
@@ -98,23 +99,8 @@ void Gra::opcjeGracza() {
 
         case '\033':
             getch();
-            switch(getch()){
-                case 'A':
-                    swiat->setRuch(Swiat::Ruch::GORA);
-                    break;
 
-                case 'B':
-                    swiat->setRuch(Swiat::Ruch::DOL);
-                    break;
-
-                case 'C':
-                    swiat->setRuch(Swiat::Ruch::PRAWO);
-                    break;
-
-                case 'D':
-                    swiat->setRuch(Swiat::Ruch::LEWO);
-                    break;
-            }
+            opcjePoruszanie();
             break;
 
         case 'z':
@@ -125,6 +111,16 @@ void Gra::opcjeGracza() {
         case 'w':
             menedzerPlikow.zapisz(swiat,"../stany_gry/zapis.state");
             graj=false;
+            break;
+
+        case 'd':
+            system("clear");
+
+            swiat->getDziennik().wypisz();
+            std::cout << "dowolny przycisk by kontynuować..." << std::endl;
+            getch();
+            czyNastepnaTura=false;
+
             break;
 
     }
@@ -152,4 +148,45 @@ char Gra::getch()
         perror("tcsetattr ~ICANON");
 
     return buf;
+}
+
+void Gra::opcjePoruszanie() {
+
+    switch(getch()){
+        case 'A':
+            swiat->setRuch(Swiat::Ruch::GORA);
+            break;
+
+        case 'B':
+            swiat->setRuch(Swiat::Ruch::DOL);
+            break;
+
+        case 'C':
+            swiat->setRuch(Swiat::Ruch::PRAWO);
+            break;
+
+        case 'D':
+            swiat->setRuch(Swiat::Ruch::LEWO);
+            break;
+    }
+
+
+}
+
+void Gra::rysujInterfejs() {
+
+    system("clear");
+
+    std::cout << "DOMINIK LAU 188697" << std::endl;
+
+    swiat->rysujSwiat();
+
+    std::cout << "sterowanie: " <<
+    "enter) nastepna tura " <<
+    "strzalki) czlowiek " <<
+    "z)szybkosc antylopy "  <<
+    "w)zapis i wyjście " <<
+    "q) wyjscie bez zapisu " <<
+    "d) dziennik" << std::endl;
+
 }

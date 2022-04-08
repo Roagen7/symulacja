@@ -13,7 +13,6 @@ public:
 
 private:
 
-//    std::string organizmDoLinii(const Organizm* org);
 
 
 };

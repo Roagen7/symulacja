@@ -58,7 +58,11 @@ bool Organizm::isZywy() const {
 }
 
 void Organizm::zabij() {
-    std::cout << this->jakoString() << " umiera" << std::endl;
+
+    std::string komunikat = this->jakoString() + " umiera";
+
+    swiat->getDziennik() << komunikat;
+
     zywy = false;
 
 }

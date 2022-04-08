@@ -3,7 +3,7 @@
 #include <vector>
 
 #include "Organizm.h"
-
+#include "Dziennik.h"
 
 
 class Swiat {
@@ -24,7 +24,6 @@ public:
 
     ~Swiat();
 
-    void obecnyStan();
     void wykonajTure();
 
     void oglosNowaTure();
@@ -46,10 +45,17 @@ public:
     Ruch getRuch();
     Ruch popRuch();
 
+    Dziennik& getDziennik();
+
+    void rysujSwiat();
+
+
 private:
 
     uint wysokosc;
     uint szerokosc;
+
+    Dziennik dziennik;
 
     uint nrTury = 0;
 
@@ -57,14 +63,12 @@ private:
 
     std::vector<Organizm*> organizmy;
 
-    void logOrganizmy();
-
 
     void ruchOrganizmow();
     void rysujNaglowek() const;
     void rysujGranice() const;
 
-    void rysujSwiat();
+
 
     void pozbadzSieZwlok();
 
