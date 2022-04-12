@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Zwierze.h"
+#include "../Zwierze.h"
 
 class Antylopa : public Zwierze {
 

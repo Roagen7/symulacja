@@ -249,6 +249,8 @@ Swiat::Swiat(uint wysokosc, uint szerokosc, std::vector<Organizm*>&& organizmy):
 
     }
 
+    srand(time(nullptr));
+
 }
 
 Swiat::~Swiat() {

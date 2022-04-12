@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Zwierze.h"
-#include "config.h"
+#include "../Zwierze.h"
+#include "../config.h"
 
 class Wilk : public Zwierze {
 
