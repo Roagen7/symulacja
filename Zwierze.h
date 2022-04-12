@@ -28,6 +28,7 @@ protected:
 private:
 
     bool rozmnozylSie = false;
+    Wektor2d wczesniejszePolozenie;
 
 
     void walcz(Organizm* drugi);
@@ -36,7 +37,6 @@ private:
 
     void cofnijSie();
 
-    Wektor2d wczesniejszePolozenie;
 
 
 };

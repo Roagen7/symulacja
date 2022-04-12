@@ -111,6 +111,7 @@ void Zwierze::rozmnozSie(Zwierze *drugi) {
 
     }
     org->setPolozenie(miejsceNarodzin);
+    org->setWiek(0);
 
     swiat->addOrganizm(org);
     rozmnozylSie = true;
@@ -147,8 +148,8 @@ void Zwierze::losowyRuch(int zasieg) {
 
     } while(wczesniejsze == polozenie ||
             (czyMaDobryWech() &&
-            swiat->getOrganizmNaPozycji(przemieszczenie) != nullptr &&
-            swiat->getOrganizmNaPozycji(przemieszczenie)->getSila() > getSila()));
+            swiat->getOrganizmNaPozycji(polozenie) != nullptr &&
+            swiat->getOrganizmNaPozycji(polozenie)->getSila() > getSila()));
 
 
 }

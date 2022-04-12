@@ -30,7 +30,6 @@ Roslina::Roslina(Wektor2d pozycja, uint sila):
 }
 
 
-
 void Roslina::rozsiej() {
 
     if((float)rand()/(float) RAND_MAX <= P_ROZSIANIA) {
@@ -40,6 +39,7 @@ void Roslina::rozsiej() {
         if (pNowy == polozenie) return;
 
         auto *org = this->kopia();
+        org->setWiek(0);
 
         org->setPolozenie(pNowy);
 
