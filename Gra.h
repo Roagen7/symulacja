@@ -6,7 +6,7 @@
 
 #include "symulacja.h"
 #include "config.h"
-#include "MenedzerPlikow.h"
+#include "pomocnicze/MenedzerPlikow.h"
 
 
 class Gra {

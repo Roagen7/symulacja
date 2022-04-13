@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Roslina.h"
+#include "../Roslina.h"
 
 class Mlecz : public Roslina {
 

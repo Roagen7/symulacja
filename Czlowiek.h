@@ -13,6 +13,11 @@ public:
 
     std::string jakoString() const override;
 
+    void setTurySpecjalne(int turySpecjalne);
+
+    int getTurySpecjalne();
+
+
 private:
 
     int turySpecjalne = 0;

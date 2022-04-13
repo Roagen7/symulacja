@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Organizm.h"
-#include "Dziennik.h"
+#include "pomocnicze/Dziennik.h"
 
 #include <vector>
 

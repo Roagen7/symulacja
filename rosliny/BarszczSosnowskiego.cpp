@@ -35,7 +35,6 @@ void BarszczSosnowskiego::akcja() {
 
     Roslina::akcja();
 
-
 }
 
 std::string BarszczSosnowskiego::jakoString() const {

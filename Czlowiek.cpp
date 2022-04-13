@@ -16,7 +16,7 @@ Czlowiek *Czlowiek::kopia() const {
 
 void Czlowiek::akcja() {
 
-    int zasieg;
+    int zasieg = 1;
 
     if(turySpecjalne == 0){
 
@@ -80,4 +80,15 @@ void Czlowiek::akcja() {
 
 std::string Czlowiek::jakoString() const {
     return "CZLOWIEK";
+}
+
+void Czlowiek::setTurySpecjalne(int turySpecjalne) {
+
+    this->turySpecjalne = turySpecjalne;
+
+}
+
+int Czlowiek::getTurySpecjalne() {
+
+    return turySpecjalne;
 }

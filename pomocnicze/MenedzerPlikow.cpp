@@ -15,7 +15,15 @@ void MenedzerPlikow::zapisz(Swiat *swiat, std::string plik) {
         out <<  organizm->jakoString() << " " <<
                 organizm->getWiek() << " " <<
                 organizm->getPolozenie().y << " " <<
-                organizm->getPolozenie().x << std::endl;
+                organizm->getPolozenie().x;
+
+        if(dynamic_cast<Czlowiek*>(organizm) != nullptr){
+
+            out << " "<<((Czlowiek*)organizm)->getTurySpecjalne();
+
+        }
+
+        out << std::endl;
 
     }
 
@@ -81,7 +89,7 @@ void MenedzerPlikow::wczytajOrganizm(std::ifstream &in, std::vector<Organizm *>&
 
     in >> nazwa >> wiek >> y >> x;
 
-    Organizm* nowy = alokujPoNazwie(nazwa);
+    Organizm* nowy = alokujPoNazwie(nazwa, in);
 
     if(nowy != nullptr){
 
@@ -95,7 +103,7 @@ void MenedzerPlikow::wczytajOrganizm(std::ifstream &in, std::vector<Organizm *>&
 
 }
 
-Organizm *MenedzerPlikow::alokujPoNazwie(std::string nazwa) {
+Organizm *MenedzerPlikow::alokujPoNazwie(std::string nazwa, std::ifstream& in) {
 
     Wektor2d p0 = {0,0};
 
@@ -121,6 +129,17 @@ Organizm *MenedzerPlikow::alokujPoNazwie(std::string nazwa) {
         if(org->jakoString() == nazwa){
 
             wybrany = org->kopia();
+
+            auto* czl = dynamic_cast<Czlowiek*>(wybrany);
+
+            if(czl != nullptr){
+
+                int tury;
+                in >> tury;
+
+                czl->setTurySpecjalne(tury);
+
+            }
 
         }
 

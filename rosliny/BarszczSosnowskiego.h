@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Zwierze.h"
-#include "Roslina.h"
+#include "../Zwierze.h"
+#include "../Roslina.h"
 
 class BarszczSosnowskiego : public Roslina{
 

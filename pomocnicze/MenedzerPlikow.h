@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Swiat.h"
-#include "symulacja.h"
+#include "../Swiat.h"
+#include "../symulacja.h"
 
 #include <fstream>
 
@@ -16,7 +16,7 @@ private:
 
     void wczytajOrganizm(std::ifstream& in, std::vector<Organizm*>& orgs);
 
-    Organizm* alokujPoNazwie(std::string nazwa);
+    Organizm *alokujPoNazwie(std::string nazwa, std::ifstream& in);
 
 
 };
