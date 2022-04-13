@@ -38,6 +38,8 @@ private:
     void cofnijSie();
 
 
+    bool wszyscySasiedziSilniejsi();
+
 
 };
 

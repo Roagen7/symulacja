@@ -131,6 +131,13 @@ void Zwierze::nowaTura() {
 
 void Zwierze::losowyRuch(int zasieg) {
 
+    if(czyMaDobryWech() && wszyscySasiedziSilniejsi()){
+
+        return;
+
+    }
+
+
     int koordynaty[] = {-1 * (int)zasieg,0,zasieg};
 
     Wektor2d przemieszczenie{0,0};
@@ -148,14 +155,40 @@ void Zwierze::losowyRuch(int zasieg) {
 
     } while(wczesniejsze == polozenie ||
             (czyMaDobryWech() &&
-            swiat->getOrganizmNaPozycji(polozenie) != nullptr &&
-            swiat->getOrganizmNaPozycji(polozenie)->getSila() > getSila()));
+            swiat->getKolidujacy(this) != nullptr &&
+            swiat->getKolidujacy(this)->getSila() > getSila()));
 
 
 }
 
 std::string Zwierze::jakoString() const {
     return "";
+}
+
+bool Zwierze::wszyscySasiedziSilniejsi() {
+
+    for(int y = -1; y <= 1; y++){
+
+        for(int x = -1; x <= 1; x++){
+
+            Wektor2d pol = {y,x};
+
+            Organizm* org = swiat->getOrganizmNaPozycji(this->polozenie + pol);
+
+
+
+            if(org != this && (org == nullptr || org->getSila() <= sila)){
+
+                return false;
+
+            }
+
+        }
+
+    }
+
+    return true;
+
 }
 
 
