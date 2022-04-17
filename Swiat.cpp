@@ -58,16 +58,24 @@ Swiat::Swiat(uint wysokosc, uint szerokosc):
 
 Organizm *Swiat::getOrganizmNaPozycji(Wektor2d p) {
 
+    Organizm* szukany = nullptr;
+
+
     for(auto* organizm : organizmy){
 
         if(p == organizm->getPolozenie() && organizm->isZywy()){
 
-            return organizm;
+            if(szukany == nullptr || szukany->getSila() < organizm->getSila()){
+
+                szukany = organizm;
+
+            }
 
         }
 
     }
-    return nullptr;
+
+    return szukany;
 
 }
 
